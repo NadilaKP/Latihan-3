@@ -1,0 +1,83 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ict: <http://ti.ukdw.ac.id/ontology/ict_taxonomy#> .
+@prefix dosen: <http://ukdw.ac.id/rdf/dosen#> .
+@prefix mhs: <http://ukdw.ac.id/rdf/mahasiswa#> .
+
+dosen:Dosen rdf:type foaf:Person .
+mhs:Mahasiswa rdf:type foaf:Person .
+ict:Topic rdf:type foaf:Agent .
+
+
+dosen:budsus rdf:type dosen:Dosen ;
+   	         foaf:name "Budi Susanto" ;
+             foaf:age "60" .
+
+dosen:nila rdf:type dosen:Dosen ;
+           foaf:name "Maria Nila"@id ;
+           foaf:age "30" .
+
+mhs:jessyln rdf:type mhs:Mahasiswa ;
+            foaf:name "Jesslyn Kesuma"@id ;
+            foaf:age "18" .
+
+dosen:budsus foaf:knows dosen:nila .
+dosen:budsus foaf:knows mhs:jessyln .
+
+mhs:nadila rdf:type mhs:Mahasiswa;
+	foaf:name "Nadila";
+	foaf:age "21";
+	foaf:mbox "nadila@ti.ukdw.ac.id" .
+
+
+mhs:yudita rdf:type mhs:Mahasiswa;
+	foaf:name "Yudita";
+	foaf:age "22";
+	foaf:mbox "Yudita@gmail.com" .
+
+
+mhs:setiowati rdf:type mhs:Mahasiswa;
+	foaf:name "Setiowati";
+	foaf:age "23";
+	foaf:mbox "Setiowati@ti.ukdw.ac.id" .
+
+mhs:kalawa rdf:type mhs:Mahasiswa;
+	foaf:name "Kalawa";
+	foaf:age "24";
+	foaf:mbox "Kalawa@ti.ukdw.ac.id" .
+
+ict:Java rdf:type ict:Topic .
+ict:RDF rdf:type ict:Topic .
+ict:Vision rdf:type ict:Topic .
+ict:UIX rdf:type ict:Topic .
+ict:IR rdf:type ict:Topic .
+ict:DL rdf:type ict:Topic .
+ict:RPL rdf:type ict:Topic .
+
+
+mhs:nadila foaf:member mhs:Java .
+mhs:yudita foaf:member mhs:RDF .
+mhs:yudita foaf:member mhs:IR .
+mhs:setiowati foaf:member mhs:Vision .
+mhs:setiowati foaf:member mhs:RPL .
+mhs:kalawa foaf:member mhs:UIX .
+mhs:kalawa foaf:member mhs:DL .
+
+
+mhs:nadila foaf:knows mhs:yudita .
+mhs:nadila foaf:knows mhs:setiowati .
+mhs:nadila foaf:knows mhs:kalawa .
+
+mhs:yudita foaf:knows mhs:nadila .
+mhs:yudita foaf:knows mhs:setiowati .
+mhs:yudita foaf:knows mhs:kalawa .
+
+mhs:setiowati foaf:knows mhs:nadila .
+mhs:setiowati foaf:knows mhs:kalawa .
+mhs:setiowati foaf:knows mhs:yudita .
+
+mhs:kalawa foaf:knows mhs:nadila .
+mhs:kalawa foaf:knows mhs:yudita .
+mhs:kalawa foaf:knows mhs:setiowati .
+
+
